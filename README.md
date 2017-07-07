@@ -1,4 +1,4 @@
-# i3_tassem
+# Tassem's i3 configurations 
 
 My i3 configuration files. Using i3 gaps and polybar
 
