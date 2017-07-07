@@ -1,0 +1,86 @@
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_argb_visual yes
+own_window_type override
+own_window_argb_value 150
+own_window_class conky-semi
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 300 200
+draw_shades yes 
+draw_outline no
+draw_borders no
+border_inner_margin 25
+draw_graph_borders yes
+default_outline_color white
+default_bar_size 150 5
+default_gauge_size 20 20
+imlib_cache_size 0
+draw_shades no
+alignment middle_left  
+gap_x 50
+gap_y 40
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+color1 9f907d
+color2 01C400
+color3 268bd2 #highlight
+
+
+TEXT
+${color3}Info ${color3}${hr 2}${font}
+${color1}User               ${alignr}${color}${uid_name 1000}
+${color1}Date               ${alignr}${color slate grey}${time %a,}${color}${time %e %B %G}
+${color1}Time               ${alignr}Vienna  ${color}${time %T}
+${alignr}${color1}London ${color}${tztime Europe/London %T}
+${alignr}${color1}Cairo ${color}${tztime Africa/Cairo %T}
+
+#${color1}Wireless           ${if_up wlo1}${alignr}${color}${addr wlo1}${else}${alignr}${color}Not Connected${endif}
+#${if_up wlo1}${alignr}${wireless_essid}
+#${color1}Ethernet           ${if_up eth0}${alignr}${color}${addr eth0}${else}${alignr}${color}Not Connected${endif}
+#${color1}Gateway            ${alignr}${color}${gw_ip}
+
+${font Roboto:size=16}${color3}System ${color3}${hr 2}${font}
+${color1}Hostname           ${alignr}${color}${nodename}
+${color1}${sysname}         ${alignr}${color}${kernel}-${machine}
+${color1}CPU                ${alignr}${color}${freq_g}GHz
+${color1}Uptime             ${alignr}${color}${uptime}
+
+${font Roboto:size=16}${color3}Processors ${color3}${hr 2}${font}
+${color1}Core 1             ${alignr}${color}${cpu cpu1}%  ${cpubar cpu1}
+${color1}Core 2             ${alignr}${color}${cpu cpu2}%  ${cpubar cpu2}
+${color1}Core 3             ${alignr}${color}${cpu cpu3}%  ${cpubar cpu3}
+${color1}Core 4             ${alignr}${color}${cpu cpu4}%  ${cpubar cpu4}
+
+${font Roboto:size=16}${color3}Memory ${color3}${hr 2}${font}
+${color1}Memory             ${color}${alignr}${memeasyfree} / ${memmax}
+${color1}Currently          ${color}${alignr}${memperc}%   ${membar}
+
+${font Roboto:size=16}${color3}Load ${color3}${hr 2}${font}
+${color1}Load Average${alignr}${#AFAF00}${loadavg 1}
+${color1}Running Processes ${alignr}${color}${running_threads}
+
+${font Roboto:size=16}${color3}Battery ${color3}${hr 2}${font}
+${color1}             ${color}${alignr}${battery_percent}% ${battery_bar}
+
+
+${font Roboto:size=16}${color3}Filesystem ${color3}${hr 2}${font}
+${color1}/             ${color}${alignc}${fs_used /} / ${fs_size /} ${color}${alignr}[ ${fs_free /} ]
+${color}${fs_bar 5,300 /}
+
+${color1}Home    ${color}${alignc}${fs_used /home/elsayed/} / ${fs_size /home/elsayed} ${color}${alignr}[ ${fs_free /home/elsayed} ]
+${color}${fs_bar 5,300 /home/elsayed}
+
+${font Roboto:size=16}${color3}Top Processes ${color3}${hr 2}${font}
+${color1}Name ${alignr}CPU   RAM
+${color}${top name 1}  ${alignr}${top cpu 1}  ${top mem 1}
+${color}${top name 2}  ${alignr}${top cpu 2}  ${top mem 2}
+${color}${top name 3}  ${alignr}${top cpu 3}  ${top mem 3}
+${color}${top name 4}  ${alignr}${top cpu 4}  ${top mem 4}
+${color}${top name 5}  ${alignr}${top cpu 5}  ${top mem 5}
+
+${font Roboto:size=16}${color3}BBC News${color3}${hr 2}${font}
+$color${rss http://feeds.bbci.co.uk/news/rss.xml?edition=uk 15 item_titles 12 1}
